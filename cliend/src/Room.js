@@ -60,12 +60,12 @@ export default function Room() {
     });
   };
 
-const UpdateRooms = (val) => (room_id) => {
-  Axios.put("http://localhost:3001/update", {
+  const UpdateRooms = (val) => (room_id) => {
+  Axios.put(`http://localhost:3001/update`, {
     capacity: newCapacity !== "" ? newCapacity : val.capacity,
     projector: newProjector !== "" ? newProjector : val.projector,
     visualizer: newVisualizer !== "" ? newVisualizer : val.visualizer,
-    micophone: newMicophone !== "" ? newMicophone : val.micophone,
+    microphone: newMicophone !== "" ? newMicophone : val.microphone,
     computer: newComputer !== "" ? newComputer : val.computer,
     room_id: room_id,
   }).then((response) => {
@@ -77,14 +77,21 @@ const UpdateRooms = (val) => (room_id) => {
               capacity: newCapacity !== "" ? newCapacity : room.capacity,
               projector: newProjector !== "" ? newProjector : room.projector,
               visualizer: newVisualizer !== "" ? newVisualizer : room.visualizer,
-              micophone: newMicophone !== "" ? newMicophone : room.micophone,
+              microphone: newMicophone !== "" ? newMicophone : room.micophone,
               computer: newComputer !== "" ? newComputer : room.computer,
             }
           : room
       )
     );
+    setNewCapacity("");
+    setNewProjector("");
+    setNewVisualizer("");
+    setNewMicophone("");
+    setNewComputer("");
   });
 };
+
+  
 
 
   const deleteRooms = (room_id) => {
@@ -140,9 +147,13 @@ const UpdateRooms = (val) => (room_id) => {
             >
               <option value="">-กรุณาเลือกอาคาร-</option>
               <option value="อาคารบุญชูปณิธาน">อาคารบุญชูปณิธาน</option>
+              <option value="อาคารเรียนรวม 4 ชั้น">อาคารเรียนรวม 4 ชั้น</option>
               <option value="อาคารเรียนรวม 5 ชั้น">อาคารเรียนรวม 5 ชั้น</option>
               <option value="อาคารสิรินธรารัตน์">อาคารสิรินธรารัตน์</option>
               <option value="อาคารนวัตกรรมบริการ">อาคารนวัตกรรมบริการ</option>
+              <option value="อาคารอเนกประสงค์และสนามกีฬาในร่ม">อาคารอเนกประสงค์และสนามกีฬาในร่ม</option>
+              <option value="อาคารปฏิบัติการสาขาออกแบบหัตถอุตสาหกรรม">อาคารปฏิบัติการสาขาออกแบบหัตถอุตสาหกรรม</option>
+              
             </select>
           </div>
           <div className="mb-3">
