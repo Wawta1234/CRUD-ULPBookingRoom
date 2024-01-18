@@ -60,8 +60,8 @@ export default function Room() {
     });
   };
 
-  const UpdateRooms = (val) => (room_id) => {
-  Axios.put(`http://localhost:3001/update`, {
+const UpdateRooms = (val) => (room_id) => {
+  Axios.put("http://localhost:3001/update", {
     capacity: newCapacity !== "" ? newCapacity : val.capacity,
     projector: newProjector !== "" ? newProjector : val.projector,
     visualizer: newVisualizer !== "" ? newVisualizer : val.visualizer,
@@ -90,8 +90,6 @@ export default function Room() {
     setNewComputer("");
   });
 };
-
-  
 
 
   const deleteRooms = (room_id) => {
@@ -145,7 +143,7 @@ export default function Room() {
                 setSelectedBuilding(event.target.value);
               }}
             >
-              <option value="">-กรุณาเลือกอาคาร-</option>
+               <option value="">-กรุณาเลือกอาคาร-</option>
               <option value="อาคารบุญชูปณิธาน">อาคารบุญชูปณิธาน</option>
               <option value="อาคารเรียนรวม 4 ชั้น">อาคารเรียนรวม 4 ชั้น</option>
               <option value="อาคารเรียนรวม 5 ชั้น">อาคารเรียนรวม 5 ชั้น</option>
@@ -153,7 +151,6 @@ export default function Room() {
               <option value="อาคารนวัตกรรมบริการ">อาคารนวัตกรรมบริการ</option>
               <option value="อาคารอเนกประสงค์และสนามกีฬาในร่ม">อาคารอเนกประสงค์และสนามกีฬาในร่ม</option>
               <option value="อาคารปฏิบัติการสาขาออกแบบหัตถอุตสาหกรรม">อาคารปฏิบัติการสาขาออกแบบหัตถอุตสาหกรรม</option>
-              
             </select>
           </div>
           <div className="mb-3">
@@ -209,7 +206,7 @@ export default function Room() {
               className="form-control"
               placeholder="ระบุจำนวน micophone ที่มี"
               onChange={(Event) => {
-                setNewMicophone(Event.target.value);
+                setmicophone(Event.target.value);
               }}
             ></input>
           </div>
