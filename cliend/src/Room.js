@@ -65,7 +65,7 @@ export default function Room() {
     capacity: newCapacity !== "" ? newCapacity : val.capacity,
     projector: newProjector !== "" ? newProjector : val.projector,
     visualizer: newVisualizer !== "" ? newVisualizer : val.visualizer,
-    microphone: newMicophone !== "" ? newMicophone : val.microphone,
+    micophone: newMicophone !== "" ? newMicophone : val.micophone,
     computer: newComputer !== "" ? newComputer : val.computer,
     room_id: room_id,
   }).then((response) => {
@@ -77,7 +77,7 @@ export default function Room() {
               capacity: newCapacity !== "" ? newCapacity : room.capacity,
               projector: newProjector !== "" ? newProjector : room.projector,
               visualizer: newVisualizer !== "" ? newVisualizer : room.visualizer,
-              microphone: newMicophone !== "" ? newMicophone : room.micophone,
+              micophone: newMicophone !== "" ? newMicophone : room.micophone,
               computer: newComputer !== "" ? newComputer : room.computer,
             }
           : room
@@ -209,7 +209,7 @@ export default function Room() {
               className="form-control"
               placeholder="ระบุจำนวน micophone ที่มี"
               onChange={(Event) => {
-                setmicophone(Event.target.value);
+                setNewMicophone(Event.target.value);
               }}
             ></input>
           </div>
